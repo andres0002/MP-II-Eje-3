@@ -1,0 +1,20 @@
+{% extends 'base_crud_user.html' %}
+
+{% block title_form_user %}
+    <i class="fa fa-eye page-header-icon"></i>&nbsp;Visualizar Usuario
+{% endblock %}
+
+{% block scripts_crud %}
+    <script>
+        $('#form').find("input[type='text'], input[type='number'], input[type='file'], select, textarea").each(function (index, element)
+        {
+            $(element).prop('readonly', true);
+            $(element).prop('disabled', true);
+        });
+
+        $('#form').find("select").each(function (index, element)
+        {
+            $(element).attr('style', 'pointer-events: none;');
+        });
+    </script>
+{% endblock %}

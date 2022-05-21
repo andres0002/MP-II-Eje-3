@@ -1,0 +1,29 @@
+{% extends 'base_crud_user.html' %}
+
+{% block title_form_user %}
+    <i class="fa fa-edit page-header-icon"></i>&nbsp;Modificar Usuario
+{% endblock %}
+
+{% block button_action_user %}
+    <button type="submit" class="btn btn-primary">
+        <span class="btn-label icon fa fa-pencil"></span>
+        Modificar
+    </button>
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript">
+        init.push(function ()
+        {
+            $('body').addClass("page-profile");
+
+        });
+        window.PixelAdmin.start(init);
+    </script>
+
+    {% block scripts_crud %}
+        <script>
+            $('#id_cedula').prop('readonly',true);
+        </script>
+    {% endblock %}
+{% endblock %}
